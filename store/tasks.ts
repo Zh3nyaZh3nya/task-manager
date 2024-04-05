@@ -32,6 +32,14 @@ export const useTasksStore = defineStore('tasks', {
                 this.tasksCompleted.push(completedTask);
             }
         },
+        refreshTask(taskId: number | string): void {
+            const taskIndex = this.tasksCompleted.findIndex(task => task.id === taskId);
+            if (taskIndex !== -1) {
+                const completedTask = { ...this.tasksCompleted[taskIndex], completed: false };
+                this.tasksCompleted.splice(taskIndex, 1);
+                this.tasks.push(completedTask);
+            }
+        }
     },
     persist: {
         enabled: true,

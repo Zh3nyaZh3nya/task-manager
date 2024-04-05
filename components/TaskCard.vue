@@ -103,6 +103,20 @@ const timeSpent = computed((): string => {
       <div class="card__icons d-flex">
         <div
             class="bg-secondary rounded-lg card-icon cursor-pointer"
+            @click="tasks_from_store.deleteTask(task.id, task.completed)"
+        >
+          <v-icon icon="mdi-delete" />
+        </div>
+        <div
+            class="bg-secondary rounded-lg card-icon cursor-pointer"
+            @click="tasks_from_store.toggleTaskCompleted(task.id)"
+            v-if="!task.completed"
+        >
+          <v-icon icon="mdi-check" />
+
+        </div>
+        <div
+            class="bg-secondary rounded-lg card-icon cursor-pointer"
             v-if="!timerActive && !task.completed"
             @click="timerActive = !timerActive"
         >
@@ -117,16 +131,10 @@ const timeSpent = computed((): string => {
         </div>
         <div
             class="bg-secondary rounded-lg card-icon cursor-pointer"
-            @click="tasks_from_store.toggleTaskCompleted(task.id)"
-            v-if="!task.completed"
+            @click="tasks_from_store.refreshTask(task.id)"
+            v-if="task.completed"
         >
-          <v-icon icon="mdi-check" />
-        </div>
-        <div
-            class="bg-secondary rounded-lg card-icon cursor-pointer"
-            @click="tasks_from_store.deleteTask(task.id, task.completed)"
-        >
-          <v-icon icon="mdi-delete" />
+          <v-icon icon="mdi-refresh" />
         </div>
       </div>
     </div>

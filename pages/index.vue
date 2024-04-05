@@ -28,5 +28,12 @@ const tasks = useTasksStore().tasks
 
 <style lang="scss">
 .main {
+  .slide-enter-active, .slide-leave-active {
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  .slide-enter, .slide-leave-to {
+    transform: translateX(50px);
+    opacity: 0;
+  }
 }
 </style>
