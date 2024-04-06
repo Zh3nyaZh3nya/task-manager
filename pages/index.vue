@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useTasksStore } from "~/store/tasks"
-const tasks = useTasksStore().tasks
+const tasks_from_store = useTasksStore().tasks
 </script>
 
 <template>
@@ -8,14 +8,14 @@ const tasks = useTasksStore().tasks
     <v-container>
       <div
           class="d-flex justify-center align-center mb-4"
-          v-if="!tasks.length"
+          v-if="!tasks_from_store.length"
       >
         <h3 class="text-surface">Нету активных задач</h3>
       </div>
       <transition-group name="slide" tag="div">
         <TaskCard
-            v-show="tasks.length > 0"
-            v-for="task in tasks"
+            v-show="tasks_from_store.length > 0"
+            v-for="task in tasks_from_store"
             :key="`task-${task.id}`"
             :task="task"
             class="mb-4"

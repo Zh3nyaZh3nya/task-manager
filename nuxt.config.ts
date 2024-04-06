@@ -15,9 +15,6 @@ export default defineNuxtConfig({
       'composable/**'
     ]
   },
-  plugins: [
-    { src: '~/plugins/vMask.ts', mode: 'client' },
-  ],
   build: {
     transpile: ['vuetify'],
   },

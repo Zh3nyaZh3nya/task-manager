@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useTasksStore } from "~/store/tasks"
-const tasksComplete = useTasksStore().tasksCompleted
+const tasks_completed_from_store = useTasksStore().tasks_completed
 </script>
 
 <template>
@@ -8,13 +8,13 @@ const tasksComplete = useTasksStore().tasksCompleted
     <v-container>
       <div
           class="d-flex justify-center align-center"
-          v-if="!tasksComplete.length"
+          v-if="!tasks_completed_from_store.length"
       >
         <h3 class="text-surface">Нету выполненных задач</h3>
       </div>
       <transition-group name="slide" tag="div">
         <TaskCard
-            v-for="task in tasksComplete"
+            v-for="task in tasks_completed_from_store"
             :key="`task-${task.id}`"
             :task="task"
             class="mb-4"

@@ -54,7 +54,6 @@ watch(timerActive, (newVal) => {
   }
 });
 
-
 interface TimeParts {
   hours: number;
   minutes: number;
@@ -105,14 +104,14 @@ const timeSpent = computed((): string => {
             class="bg-secondary rounded-lg card-icon cursor-pointer"
             @click="tasks_from_store.deleteTask(task.id, task.completed)"
         >
-          <v-icon icon="mdi-delete" />
+          <v-icon color="delete" icon="mdi-delete" />
         </div>
         <div
             class="bg-secondary rounded-lg card-icon cursor-pointer"
             @click="tasks_from_store.toggleTaskCompleted(task.id)"
             v-if="!task.completed"
         >
-          <v-icon icon="mdi-check" />
+          <v-icon color="complete" icon="mdi-check" />
 
         </div>
         <div
@@ -120,21 +119,21 @@ const timeSpent = computed((): string => {
             v-if="!timerActive && !task.completed"
             @click="timerActive = !timerActive"
         >
-          <v-icon icon="mdi-play" />
+          <v-icon color="play" icon="mdi-play" />
         </div>
         <div
             class="bg-secondary rounded-lg card-icon cursor-pointer"
             v-else-if="timerActive && !task.completed"
             @click="timerActive = !timerActive"
         >
-          <v-icon icon="mdi-pause" />
+          <v-icon color="stop" icon="mdi-pause" />
         </div>
         <div
             class="bg-secondary rounded-lg card-icon cursor-pointer"
             @click="tasks_from_store.refreshTask(task.id)"
             v-if="task.completed"
         >
-          <v-icon icon="mdi-refresh" />
+          <v-icon color="refresh" icon="mdi-refresh" />
         </div>
       </div>
     </div>

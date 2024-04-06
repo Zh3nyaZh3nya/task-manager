@@ -23,6 +23,11 @@ const Theme = {
         info: '#000000',
         success: '#000000',
         warning: '#000000',
+        refresh: '#98FB98',
+        stop: '#FF2400',
+        play: '#4CAF50',
+        complete: '#00FF00',
+        delete: '#D32F2F',
     }
 }
 

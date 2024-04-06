@@ -13,7 +13,6 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
-    "maska": "^2.1.11",
     "nuxt": "^3.10.3",
     "pinia": "^2.1.7",
     "sass": "^1.71.1",

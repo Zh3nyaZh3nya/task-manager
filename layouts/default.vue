@@ -2,7 +2,9 @@
   <v-app app>
     <Header />
     <transition name="page" mode="out-in">
-      <router-view class="view h-100"></router-view>
+      <router-view v-slot="{ Component }">
+        <component :is="Component" class="view h-100" />
+      </router-view>
     </transition>
     <Footer />
   </v-app>

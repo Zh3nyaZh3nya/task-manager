@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useTasksStore } from "~/store/tasks"
-const task_store = useTasksStore()
+const tasks_from_store = useTasksStore()
 
 const titleCard = ref<string>('')
 const hours = ref<string>('');
@@ -10,7 +10,7 @@ const isActive = ref<boolean>(false);
 function addTask<T>(validForm: boolean, data: Record<string, T>) {
   if(validForm) {
 
-    task_store.addTask({
+    tasks_from_store.addTask({
       id: new Date().getTime(),
       title: data.title as string,
       completed: false,
