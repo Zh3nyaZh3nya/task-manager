@@ -1,6 +1,23 @@
-# Nuxt 3 Minimal Starter
+> Курсовая работа для Caspian College "Task Manager" by Головкин Евгений
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Приложение разработано на **Nuxt.js v3**, 
+UI библиотеки **Vuetify**, 
+state manager **Pinia**,
+для сохранения задач в localStorage использовался плагин **Persisted State Pinia**
+
+### Application
+
+| Т       | В       |
+|---------|---------|
+| Nuxt    | v3.10.3 |
+| vuetify | v3.5.7  |
+
+### Серверное ПО
+
+| Т       | В        |
+|---------|----------|
+| Node JS | v20.11.0 |
+| npm     | v10.2.4  |
 
 ## Setup
 
